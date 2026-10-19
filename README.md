@@ -1,10 +1,17 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="consent-guard — access not authorized" width="100%">
+  <img src="assets/banner.gif" alt="consent-guard — access not authorized (rainbow cat vibes, GPTBot gets 403)" width="100%">
 </p>
 
 <p align="center">
   <b>Anti-scraper protection with counter-injection.</b><br>
   Unauthorized agents get a cease notice from the site owner — and often relay it to their operator.
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/consent-guard"><img src="https://img.shields.io/npm/v/consent-guard?label=npm" alt="npm"></a>
+  <img src="https://img.shields.io/badge/dependencies-zero-brightgreen" alt="zero dependencies">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license">
+  <a href="https://github.com/SomeoneUnlicensed/consent-guard/stargazers"><img src="https://img.shields.io/github/stars/SomeoneUnlicensed/consent-guard?style=flat" alt="stars"></a>
 </p>
 
 <p align="center">

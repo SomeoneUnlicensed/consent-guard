@@ -4,6 +4,24 @@
   "description": "Anti-scraper / anti-AI-agent protection with counter-injection: unauthorized clients get an authoritative cease notice from the site owner.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SomeoneUnlicensed/consent-guard.git"
+  },
+  "keywords": [
+    "security",
+    "waf",
+    "anti-scraper",
+    "anti-bot",
+    "ai-crawler",
+    "gptbot",
+    "claudebot",
+    "counter-injection",
+    "prompt-injection",
+    "rate-limit",
+    "nextjs",
+    "express"
+  ],
   "exports": {
     ".": "./dist/index.js",
     "./express": "./dist/adapters/express.js",
@@ -21,7 +39,8 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit",
-    "demo": "npm run build && node demo/server.mjs"
+    "demo": "npm run build && node demo/server.mjs",
+    "banner": "node scripts/make-gif.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
