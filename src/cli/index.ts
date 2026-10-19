@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { readFileSync, writeFileSync, existsSync, copyFileSync, mkdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { readIncidents } from '../core/log.js';

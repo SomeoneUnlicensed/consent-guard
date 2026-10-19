@@ -28,7 +28,8 @@
     "./next": "./dist/adapters/next.js"
   },
   "bin": {
-    "consent-guard": "dist/cli/index.js"
+    "consent-guard": "./dist/cli/index.js",
+    "consent-guard-js": "./dist/cli/index.js"
   },
   "files": [
     "dist",
