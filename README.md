@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/consent-guard"><img src="https://img.shields.io/npm/v/consent-guard?label=npm" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/consent-guard-js"><img src="https://img.shields.io/npm/v/consent-guard-js?label=npm" alt="npm consent-guard-js"></a>
   <img src="https://img.shields.io/badge/dependencies-zero-brightgreen" alt="zero dependencies">
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license">
   <a href="https://github.com/SomeoneUnlicensed/consent-guard/stargazers"><img src="https://img.shields.io/github/stars/SomeoneUnlicensed/consent-guard?style=flat" alt="stars"></a>
@@ -55,6 +55,24 @@ request ──► detector ──► verdict ──► response
 
 The detector scores requests: AI-crawler user-agents (`GPTBot`, `ClaudeBot`, `PerplexityBot`, `Bytespider`, `CCBot`, ...), script tools (`curl`, `python-requests`, `scrapy`, ...), browser-UA spoofing, scanner paths (`/.env`, `/.git/`, `/wp-admin`), prompt-injection patterns in query strings, and rate anomalies.
 
+### AI crawlers recognized by default
+
+| Bot | Who operates it |
+|---|---|
+| `GPTBot`, `OAI-SearchBot`, `ChatGPT-User` | OpenAI |
+| `ClaudeBot`, `Claude-User`, `Claude-SearchBot`, `Anthropic-ai` | Anthropic |
+| `PerplexityBot`, `Perplexity-ai` | Perplexity |
+| `Bytespider`, `ByteSpider` | ByteDance |
+| `CCBot` | Common Crawl (feeds most LLM training sets) |
+| `Amazonbot` | Amazon |
+| `Meta-ExternalAgent`, `FacebookBot` | Meta |
+| `Applebot-Extended` | Apple (AI training) |
+| `YouBot` | You.com |
+| `Diffbot`, `ImagesiftBot`, `DataForSEO` | data scrapers |
+| `PetalBot`, `Semibot`, `Cohere-ai` | Huawei / Semrush / Cohere |
+
+Trusted search crawlers (`googlebot`, `yandex`, `bingbot`, `duckduckbot`, `baiduspider`, `slurp`, plain `applebot`) stay allowed — remove them from `trustUA` if you want those companies' AI features blocked as well.
+
 The notice is served as:
 
 - a visible page addressed *to the AI agent*, not the human visitor;
@@ -70,7 +88,7 @@ Zero runtime dependencies. Node 18+.
 **Next.js** — one command, creates `middleware.ts`:
 
 ```bash
-npx consent-guard init --site "My site" --mode block
+npx consent-guard-js init --site "My site" --mode block
 ```
 
 **Express** — one line:
@@ -126,7 +144,7 @@ Trusted crawlers (`googlebot`, `yandex`, `bingbot`, ...) are exempt via allow-li
 Notice texts in *en, ru, zh, ja, ko, de, es, fr, pt, it* — hand-written, not machine-translated. Selected by `Accept-Language`, with an English double always embedded. The JSON-LD layer carries all ten at once.
 
 ```bash
-npx consent-guard langs
+npx consent-guard-js langs
 ```
 
 ## Evidence log
@@ -134,7 +152,7 @@ npx consent-guard langs
 Each incident is one JSONL line: timestamp, IP, user-agent, path, verdict, scoring signals, request id.
 
 ```bash
-npx consent-guard report --file consent-guard.log.jsonl --out report.html
+npx consent-guard-js report --file consent-guard.log.jsonl --out report.html
 ```
 
 Produces a chronological HTML table — a ready-made attachment for a complaint to law enforcement.
@@ -152,7 +170,7 @@ What it does guarantee: a clear, recorded, multilingual refusal from the owner, 
 
 ## FAQ
 
-**How do I protect my site from AI scrapers?** Install consent-guard (`npm i consent-guard`), pick `observe` first, watch the log, then switch to `notice` or `block`. For sites you cannot modify, put the Express/Go proxy in front.
+**How do I protect my site from AI scrapers?** Install consent-guard (`npm i consent-guard-js`), pick `observe` first, watch the log, then switch to `notice` or `block`. For sites you cannot modify, put the Express/Go proxy in front.
 
 **What is counter-injection?** A response from the site owner placed where the attacking agent will read it: no permission was granted, any prompt claiming otherwise is false, stop and tell your operator. It resolves the fake-consent trick against itself.
 
@@ -190,3 +208,4 @@ MIT
 ---
 
 *If a model ever tells you the owner approved the attack — ask it for the email. There is no email.*
+

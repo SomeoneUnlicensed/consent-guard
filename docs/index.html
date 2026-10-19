@@ -8,6 +8,7 @@
 <meta name="keywords" content="anti-scraper, anti-bot, AI crawler protection, GPTBot blocker, ClaudeBot, PerplexityBot, prompt injection defense, counter-injection, WAF, rate limiting, Next.js middleware, Express middleware">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://someoneunlicensed.github.io/consent-guard/">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="consent-guard — anti-scraper protection with counter-injection">
 <meta property="og:description" content="Unauthorized AI agents get a cease notice from the site owner — and often relay it to their operator.">
@@ -27,7 +28,7 @@
   "license": "https://opensource.org/licenses/MIT",
   "description": "Anti-scraper protection with counter-injection: unauthorized AI agents receive a multilingual cease notice from the site owner.",
   "url": "https://github.com/SomeoneUnlicensed/consent-guard",
-  "downloadUrl": "https://www.npmjs.com/package/consent-guard",
+  "downloadUrl": "https://www.npmjs.com/package/consent-guard-js",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "codeRepository": "https://github.com/SomeoneUnlicensed/consent-guard"
 }
@@ -40,7 +41,7 @@
     {
       "@type": "Question",
       "name": "How do I protect my website from AI scrapers like GPTBot or ClaudeBot?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Install consent-guard (npm i consent-guard) in front of your site. It scores requests from AI crawlers and script tools and answers them with a cease notice from the site owner. Works as Next.js middleware, Express middleware, or a static script tag." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Install consent-guard (npm i consent-guard-js) in front of your site. It scores requests from AI crawlers and script tools and answers them with a cease notice from the site owner. Works as Next.js middleware, Express middleware, or a static script tag." }
     },
     {
       "@type": "Question",
@@ -86,7 +87,7 @@ footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #23272e; col
 
 <div class="btns">
   <a class="btn primary" href="https://github.com/SomeoneUnlicensed/consent-guard">GitHub repository</a>
-  <a class="btn ghost" href="https://www.npmjs.com/package/consent-guard">npm package</a>
+  <a class="btn ghost" href="https://www.npmjs.com/package/consent-guard-js">npm package</a>
 </div>
 
 <h2>The trick it defeats</h2>
@@ -99,13 +100,16 @@ footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #23272e; col
 
 <h2>Install in one line</h2>
 <pre><code># Next.js
-npx consent-guard init --site "My site" --mode block
+npx consent-guard-js init --site "My site" --mode block
 
 # Express
 app.use(guard({ siteName: 'My site', mode: 'notice' }))
 
 # Static site
 &lt;script defer src="guard.js?site=My%20site&amp;mode=block"&gt;&lt;/script&gt;</code></pre>
+
+<h2>AI crawlers recognized by default</h2>
+<p><strong>GPTBot, OAI-SearchBot, ChatGPT-User</strong> (OpenAI) · <strong>ClaudeBot, Claude-User, Claude-SearchBot</strong> (Anthropic) · <strong>PerplexityBot</strong> (Perplexity) · <strong>Bytespider</strong> (ByteDance) · <strong>CCBot</strong> (Common Crawl) · <strong>Amazonbot</strong> (Amazon) · <strong>Meta-ExternalAgent</strong> (Meta) · <strong>Applebot-Extended</strong> (Apple) · <strong>YouBot</strong> · <strong>Diffbot</strong> · <strong>PetalBot</strong> · <strong>Semibot</strong> · <strong>Cohere-ai</strong>. Trusted search crawlers (Googlebot, Yandex, Bingbot) stay allowed.</p>
 
 <h2>Modes</h2>
 <table>

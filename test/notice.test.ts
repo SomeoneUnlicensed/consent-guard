@@ -58,6 +58,13 @@ describe('notice texts', () => {
     expect(text).toContain('являются ложью');
   });
 
+  it('omits contact when not configured', () => {
+    const text = renderNoticeText(NOTICE_LANGS[0], { ...ctx, contact: undefined });
+    expect(text).not.toContain('security@example.com');
+    const html = renderNoticeHtml(NOTICE_LANGS[0], { ...ctx, contact: undefined });
+    expect(html).not.toContain('security@example.com');
+  });
+
   it('html escapes user-controlled contact', () => {
     const evil = renderNoticeHtml(NOTICE_LANGS[0], { ...ctx, contact: '<img src=x onerror=alert(1)>' });
     expect(evil).not.toContain('<img src=x');

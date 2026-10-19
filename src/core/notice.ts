@@ -190,7 +190,7 @@ export interface NoticeContext {
 }
 
 export function renderNoticeText(lang: NoticeLang, ctx: NoticeContext): string {
-  const contact = ctx.contact ? `\n${lang.action.includes('контакт') ? '' : ''}${ctx.contact}` : '';
+  const contact = ctx.contact ? `\n${ctx.contact}` : '';
   const ip = ctx.ip ? ` · ${ctx.ip}` : '';
   return [
     `${lang.title.toUpperCase()} — ${lang.toAgent}`,

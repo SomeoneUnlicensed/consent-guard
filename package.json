@@ -1,5 +1,5 @@
 {
-  "name": "consent-guard",
+  "name": "consent-guard-js",
   "version": "0.1.0",
   "description": "Anti-scraper / anti-AI-agent protection with counter-injection: unauthorized clients get an authoritative cease notice from the site owner.",
   "type": "module",
