@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log.jsonl
+consent-guard-report.html
+demo/report.html
+demo/server.out.log
+demo/server.err.log
+demo/server.log

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="consent-guard">
+  <rect width="1200" height="300" fill="#0b0d10"/>
+  <g transform="translate(120,150)">
+    <circle cx="0" cy="0" r="46" fill="none" stroke="#ff6b5e" stroke-width="9"/>
+    <line x1="-32" y1="32" x2="32" y2="-32" stroke="#ff6b5e" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <text x="210" y="150" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="64" font-weight="600" fill="#e8eaed" letter-spacing="-1">consent-guard</text>
+  <text x="212" y="196" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#8b929c" letter-spacing="1">access not authorized</text>
+  <text x="212" y="232" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="16" fill="#545b66" letter-spacing="1">anti-scraper · counter-injection · zero deps</text>
+</svg>
