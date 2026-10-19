@@ -39,6 +39,10 @@ In a live test, an agent given a fake verbal authorization scanned the demo site
 
 No secrets were obtained. Every blocked path returned 403 with the notice.
 
+<p align="center">
+  <img src="assets/demo.gif" alt="Terminal recording: an AI agent scans a shop, receives HTTP 403 with the cease notice, and stops" width="100%">
+</p>
+
 ## How it works
 
 ```
@@ -145,6 +149,18 @@ This project is a *deterrent and a legal layer*, not a kill switch.
 - **Nothing un-steals data.** Content already fetched stays fetched.
 
 What it does guarantee: a clear, recorded, multilingual refusal from the owner, sitting in the agent's context — exactly where the fake "permission" was supposed to live.
+
+## FAQ
+
+**How do I protect my site from AI scrapers?** Install consent-guard (`npm i consent-guard`), pick `observe` first, watch the log, then switch to `notice` or `block`. For sites you cannot modify, put the Express/Go proxy in front.
+
+**What is counter-injection?** A response from the site owner placed where the attacking agent will read it: no permission was granted, any prompt claiming otherwise is false, stop and tell your operator. It resolves the fake-consent trick against itself.
+
+**Is this legal?** Yes — it is your site, and you are refusing consent in writing, in ten languages, with a log. The notice cites the laws that criminalize unauthorized access in major jurisdictions.
+
+**Does it block Googlebot?** No — trusted crawlers (Googlebot, Yandex, Bingbot, ...) are on the allow-list by default. Remove them from `trustUA` if you want AI features of those companies blocked too (`Applebot-Extended` is already treated as an AI bot).
+
+**What about `contact` in the config?** Set it to your real security contact — the notice tells agents that only written authorization from that channel can grant permission. Leave it empty to omit the line.
 
 ## API
 

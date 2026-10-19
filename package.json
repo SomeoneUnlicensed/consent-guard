@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SomeoneUnlicensed/consent-guard.git"
+    "url": "git+https://github.com/SomeoneUnlicensed/consent-guard.git"
   },
   "keywords": [
     "security",
@@ -28,7 +28,7 @@
     "./next": "./dist/adapters/next.js"
   },
   "bin": {
-    "consent-guard": "./dist/cli/index.js"
+    "consent-guard": "dist/cli/index.js"
   },
   "files": [
     "dist",
